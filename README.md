@@ -1,5 +1,5 @@
 1️⃣ What is GraphQL?
-
+----------------------------------------------------------------------------------------------------------------------------------
 GraphQL is a query language for APIs and a runtime that allows clients to request exactly the data they need, no more and no less.
 
 Key Problems GraphQL Solves
