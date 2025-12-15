@@ -1,0 +1,280 @@
+
+
+
+       Rest
+		GET/TODOS                       ____ 
+	_______________________________________ |  | -----node source
+	| |  __________________________________ |  |
+	|__|                                   ------     x ID
+	Client      Todos                                 x user_iD
+							   title
+		Bandwidth best ho rhi hai		x completed
+
+
+GraphQL is a query language for APIs and a runtime for executing those queries.
+GraphQL lets clients request exactly the data they need from a server — nothing more, nothing less.
+
+🚀 Why GraphQL?
+✓ 1. Fetch only required data
+
+Unlike REST (which often returns fixed data), GraphQL returns only what the client asks for.
+
+✓ 2. Single Endpoint
+
+REST uses multiple endpoints:
+
+/users
+/users/:id
+/users/:id/posts
+
+
+GraphQL uses ONE endpoint:
+
+POST /graphql
+
+✓ 3. Strongly Typed Schema
+
+Your API has a schema defining:
+
+Types
+
+Fields
+
+Relationships
+
+Queries
+
+Mutations
+
+✓ 4. Better for complex apps
+
+Works well for:
+
+Mobile apps with bandwidth limitations
+
+Microservices
+
+Frontend-heavy apps (React, Angular, Vue)
+
+🧠 How GraphQL Works?
+1. Client sends a query
+
+Example query:
+
+{
+  user(id: 1) {
+    name
+    email
+  }
+}
+
+2. Server resolves only requested fields
+
+Response:
+
+{
+  "user": {
+    "name": "Sumant",
+    "email": "sumant@example.com"
+  }
+}
+
+🛠️ GraphQL Concepts
+1. Query
+
+For fetching data (like GET).
+
+2. Mutation
+
+For modifying data (like POST, PUT, DELETE).
+
+3. Schema
+
+Defines your API structure.
+
+4. Resolver
+
+Functions that return the data for each field.
+
+🆚 REST vs GraphQL (Quick Comparison)
+Feature	REST	GraphQL
+Endpoints	Multiple	One
+Data fetching	Fixed	Flexible
+Over-fetching	Yes	No
+Under-fetching	Yes	No
+Schema	No	Strongly typed
+Versioning	Often needed	Rarely needed
+
+
+Apollo Server
+Apollo Client
+
+
+
+Why we use GraphQL in Node.js and TypeScript
+1. Efficient Data Fetching
+With REST, each endpoint returns a fixed structure.
+With GraphQL, the client can request exactly the data it needs.
+
+2. Single Endpoint
+
+REST = many URLs ( /users, /users/:id, /products … ).
+GraphQL = one endpoint (usually /graphql).
+
+3. Strong Type System (Perfect with TypeScript)
+
+GraphQL has its own schema with strict types:
+
+4. Easy to Integrate With Databases
+
+GraphQL works perfectly with:
+
+PostgreSQL
+
+MongoDB
+
+Prisma ORM
+
+TypeORM
+
+Sequelize
+
+You write resolvers to connect queries/mutations directly to your database.
+
+
+5. Better for Modern UI Frameworks
+
+Frontend frameworks like:
+
+React
+
+Next.js
+
+Vue
+
+Angular
+
+love GraphQL because clients can fetch exactly what they need.
+This greatly improves performance and reduces API calls.
+
+
+6. Real-Time Support (Subscriptions)
+
+GraphQL supports real-time communication using Subscriptions.
+
+Example:
+
+subscription {
+  messageAdded {
+    text
+    user
+  }
+}
+
+
+Perfect for apps like:
+
+Chat applications
+
+Live dashboards
+
+Notifications
+
+7. API Versioning Becomes Easy
+
+With REST you create new versions: /v1/users, /v2/users.
+With GraphQL, you simply extend the schema without breaking old clients.
+
+⭐ Summary
+Feature	          REST	                GraphQL
+Data fetching	  Fixed	               Flexible
+Endpoints	  Many	                 One
+Strong typing	  Limited	       Built-in
+Real-time	  Complex	       Easy
+Versioning	  Hard	               Simple
+Works well with TypeScript	Good	Excellent
+
+
+
+
+1. GraphQL ek Query language hai jo precise data fetching allow karta hai 
+Sirf wahi data milta hai jo hum chahte hain na zyada , na kam.
+
+
+2.          REST vs GraphQL
+. REST
+. -Multiple endpoints
+. -Over-fetching/Under-fetching
+.- Versioning issues
+
+.GraphQL
+. -Single endpoint
+. -Exact data fetching
+. -No versioning
+. Strongly typed Schema
+
+Example Query in GraphQL
+{
+ user(id: 1)
+ name
+ posts{
+   title
+ }
+}
+}
+
+
+Real World Use
+
+.GraphQL ko modern companies jaise shopify, GitHub use krte hain
+.Frontends jaise React.js/Next.js GraphQL ke sath easily integrate hote hain.
+
+
+
+REST API vs GraphQL - Practical Comparison
+. Is epicode mein hum GraphQL aur REST API ko practical example ke zariye compare karenge
+
+.Ek hi data ko dono tarike se fetch karenge aur samjhenge kaun better hai.
+
+
+	API Use Case
+. Hume chahiye ek user ka data:
+
+. Name 
+. Age
+. Uske blog posts ke titles
+
+. Is use case ko hum dono APIs ke through dekhenge
+. 1. REST
+. 2. GraphQL
+
+	REST API Approach
+
+. GET `/users/1`-> User ka basic data
+. GET `/users/1/posts` -> Uske posts
+
+. Multiple requests lagte hain
+. Over-fetching ya under-fetching ka chance
+
+
+
+		GraphQL Query
+{
+ use(id:"1") {
+ name 
+ age
+ posts {
+  title
+ }
+}
+}
+
+✅Single query
+✅Sirf wahi data milta hai jo chahiye
+
+      REST vs GraphQL (Basics)
+. REST mein multiple endpoints
+. GraphQL mein ek hi endpoint
+. REST mein fixed response
+. GraphQL mein client defines structure
+
